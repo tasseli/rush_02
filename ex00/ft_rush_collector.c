@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 15:53:53 by sreijola         ###   ########.fr       */
+/*   Updated: 2019/07/27 16:07:24 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 		ft_strncpy(ans, ft_top00(x), x);
 	else if (y > 1)
 	{
-		ans[0] = ft_top00(x);
+		ft_strncpy(ans, ft_top00(x));
 		while (i <= y - 2)
 		{
-			ans[i] = ft_mid00(x);
+			ft_strncpy(&ans[i * x], ft_mid00(x));
 			i++;
 		}
-		ans[y - 1] = ft_bot00(x);
-		ans[y] = '\0';
+		ft_strncpy(ans[(y - 1) * x], ft_bot00(x));
+		ans[y * x] = '\0';
 	}
 	ft_strcpy(myinfo->name, "rushcollector00");
 	myinfo->print = ans;
