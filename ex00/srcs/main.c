@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 17:39:11 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:44:40 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,26 @@ int	main(void)
 	char		*first_line0;
 	t_rush_info	*myinfo;
 
-	ft_putchar('0' + ft_read());
-//	myinfo = ft_rush_collector00(length, 3);
-//	printf("%s %s\n", myinfo->name, myinfo->print);
-//	free (myinfo->print);
-//	free (myinfo);
+//	ft_putchar('0' + ft_read());
+	myinfo = ft_rush_collector00(length, 3);
+	printf("%s %s\n", myinfo->name, myinfo->print);
+	free (myinfo->print);
+	free (myinfo);
+	myinfo = ft_rush_collector01(length, 3);
+	printf("%s %s\n", myinfo->name, myinfo->print);
+	free (myinfo->print);
+	free (myinfo);
+	myinfo = ft_rush_collector02(length, 3);
+	printf("%s %s\n", myinfo->name, myinfo->print);
+	free (myinfo->print);
+	free (myinfo);
+	myinfo = ft_rush_collector03(length, 3);
+	printf("%s %s\n", myinfo->name, myinfo->print);
+	free (myinfo->print);
+	free (myinfo);
+	myinfo = ft_rush_collector04(length, 3);
+	printf("%s %s\n", myinfo->name, myinfo->print);
+	free (myinfo->print);
+	free (myinfo);
 	return (0);
 }
