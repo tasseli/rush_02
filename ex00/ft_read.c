@@ -6,36 +6,27 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 15:10:50 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:10:37 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ft_rush.h"
 #include "ft_read.h"
 
-void	compare(char *line1, char *line2, int x)
+void	ft_read(void)
 {
-	char line1[x];
-	char line2[x];
-	ft_strncpy(line1, first_line, x);
-	ft_strncpy(line2, ft_top00, x);
-	if (!ft_strcmp(line1, line2))
-		ft_putstr("it could be top00");
-}
-
-
-void	read(int fd)
-{
-	int		fd;
-	int		reading;
-	void	*buf;
-	char	first_line[10 * BUFFER_SIZE];
-	int		letters;
-	int		x;
+	int			fd;
+	int			reading;
+	void		*buf;
+	char		first_line[10 * BUFFER_SIZE];
+	int			letters;
+	int			x;
+	t_rush_info	*rush00;
 
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	fd = open(0, O_RDONLY);
 	if (fd == -1)
-		return (1);
+		return ;
 	reading = 1;
 	letters = 0;
 	while (reading)
@@ -43,12 +34,13 @@ void	read(int fd)
 		if (reading != '\n')
 		{
 			reading = read(fd, buf, 1);
-			first_line[x] = buf[x];
+			first_line[x] = ((char *)buf)[x];
 			++letters;
 			++x;
 		}
-		if (!ft_compare(ft_strncpy(NULL, first_line, x), ft_strncpy(NULL,
-						ft_top00, x)))
+		rush00 = ft_rush_collector00(x, 1);
+		if (!strcmp(strncpy(NULL, first_line, x), strncpy(NULL,
+					rush00->print, x)))
 			ft_putstr("it could be top00");
 	}
 
