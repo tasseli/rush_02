@@ -6,11 +6,22 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 13:51:26 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 15:10:50 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
+
+void	compare(char *line1, char *line2, int x)
+{
+	char line1[x];
+	char line2[x];
+	ft_strncpy(line1, first_line, x);
+	ft_strncpy(line2, ft_top00, x);
+	if (!ft_strcmp(line1, line2))
+		ft_putstr("it could be top00");
+}
+
 
 void	read(int fd)
 {
@@ -36,12 +47,10 @@ void	read(int fd)
 			++letters;
 			++x;
 		}
-		char line1[x];
-		char line2[x];
-		ft_strncpy(line1, first_line, x);
-		ft_strncpy(line2, ft_top00, x);
-		if (!ft_strcmp(line1, line2))
+		if (!ft_compare(ft_strncpy(NULL, first_line, x), ft_strncpy(NULL,
+						ft_top00, x)))
 			ft_putstr("it could be top00");
+	}
 
 // file open
 // read a char
@@ -76,5 +85,4 @@ void	read(int fd)
 // 			end
 
 	close(fd);
-
-//			quit
+}
