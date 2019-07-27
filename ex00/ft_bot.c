@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush0203.c                                         :+:      :+:    :+:   */
+/*   ft_bot.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 15:59:29 by sreijola         ###   ########.fr       */
+/*   Updated: 2019/07/27 16:12:34 by sreijola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-/* length is the  amount of chars its actually gonna print, add 1 for null*/
+#include "ft_rush.h"
 
-char *ft_bot00(int len)
+char	*ft_bot00(int len)
 {
-	char *mine;
-	int i;
+	char	*mine;
+	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
@@ -25,7 +23,7 @@ char *ft_bot00(int len)
 	{
 		mine[0] = 'o';
 		while (i <= len - 2)
-		{	
+		{
 			mine[i] = '-';
 			i++;
 		}
@@ -35,10 +33,10 @@ char *ft_bot00(int len)
 	return (mine);
 }
 
-char *ft_bot01(int len)
+char	*ft_bot01(int len)
 {
-	char *mine;
-	int i;
+	char	*mine;
+	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
@@ -48,7 +46,7 @@ char *ft_bot01(int len)
 	{
 		mine[0] = '\\';
 		while (i <= len - 2)
-		{	
+		{
 			mine[i] = '*';
 			i++;
 		}
@@ -58,10 +56,10 @@ char *ft_bot01(int len)
 	return (mine);
 }
 
-char *ft_bot02(int len)
+char	*ft_bot02(int len)
 {
-	char *mine;
-	int i;
+	char	*mine;
+	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
@@ -71,7 +69,7 @@ char *ft_bot02(int len)
 	{
 		mine[0] = 'C';
 		while (i <= len - 2)
-		{	
+		{
 			mine[i] = 'B';
 			i++;
 		}
@@ -80,10 +78,11 @@ char *ft_bot02(int len)
 	}
 	return (mine);
 }
-char *ft_bot03(int len)
+
+char	*ft_bot03(int len)
 {
-	char *mine;
-	int i;
+	char	*mine;
+	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
@@ -93,7 +92,7 @@ char *ft_bot03(int len)
 	{
 		mine[0] = 'A';
 		while (i <= len - 2)
-		{	
+		{
 			mine[i] = 'B';
 			i++;
 		}
@@ -103,10 +102,10 @@ char *ft_bot03(int len)
 	return (mine);
 }
 
-char *ft_bot04(int len)
+char	*ft_bot04(int len)
 {
-	char *mine;
-	int i;
+	char	*mine;
+	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
@@ -116,7 +115,7 @@ char *ft_bot04(int len)
 	{
 		mine[0] = 'C';
 		while (i <= len - 2)
-		{	
+		{
 			mine[i] = 'B';
 			i++;
 		}
