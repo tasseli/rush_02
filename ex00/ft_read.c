@@ -6,17 +6,18 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 11:46:46 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 11:55:29 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
 
 void	read(int fd)
+{
+	int		fd;
 
-//int open(const char *pathname, int flags, mode_t mode);
-
-//ssize_t read(int fd, void *buf, size_t count);
+	fd = open(0, O_RDONLY);
+//ssize_t read(fd, void *buf, size_t count);
 
 //int close(int fd);
 
