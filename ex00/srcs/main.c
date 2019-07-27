@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 18:40:45 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 19:03:16 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	testprint(char *masterstr, int x)
 
 int	main(int argc, char **argv)
 {
+/*
 	int x = atoi(argv[1]);
 	int y = atoi(argv[2]);
 	int			length = x;
@@ -40,7 +41,6 @@ int	main(int argc, char **argv)
 	t_rush_info	*myinfo3;
 	t_rush_info	*myinfo4;
 
-//	ft_putchar('0' + ft_read());
 	myinfo0 = ft_rush_collector00(length, y);
 	printf("%s %s\n", myinfo0->name, myinfo0->print);
 	testprint(myinfo0->print, x);
@@ -65,6 +65,7 @@ int	main(int argc, char **argv)
 	printf("%s %s\n", myinfo4->name, myinfo4->print);
 	testprint(myinfo4->print, x);
 	free (myinfo4->print);
-	free (myinfo4);
+	free (myinfo4);*/
+	ft_putchar('0' + ft_read());
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 17:37:44 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 19:28:03 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,28 @@ int	ft_read(void)
 	void		*buf;
 	char		first_line[10 * BUFFER_SIZE];
 	int			letters;
-	int			x;
 	t_rush_info	*rush00;
 
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
-	fd = open(0, O_RDONLY);
-	if (fd == -1)
-		return (1);
+//	fd = open(0, O_RDONLY);
+//	if (fd == -1)
+//		return (1);
 	reading = 1;
 	letters = 0;
 	while (reading)
 	{
 		if (reading != '\n')
 		{
-			reading = read(fd, buf, 1);
-			first_line[x] = ((char *)buf)[x];
+			reading = read(0, buf, 1);
+			first_line[letters] = ((char *)buf)[letters];
 			++letters;
-			++x;
 		}
-		rush00 = ft_rush_collector00(x, 1);
-		if (!strcmp(strncpy(NULL, first_line, x), strncpy(NULL,
-					rush00->print, x)))
+		rush00 = ft_rush_collector00(letters, 1);
+		if (!strcmp(strncpy(NULL, first_line, letters), strncpy(NULL,
+					rush00->print, letters)))
 			ft_putstr("it could be top00");
+		else
+			ft_putstr("No match found");
 	}
 
 // file open
