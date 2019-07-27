@@ -6,23 +6,23 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 19:30:39 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 22:54:31 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_READ_H
 # define FT_READ_H
 
-# include <stdlib.h>
 # include <unistd.h> // read, close
 
+# include <sys/uio.h> // write?
 # include <sys/types.h> // open
 # include <sys/stat.h>
 # include <fcntl.h>
 
 # include <string.h> // TODO remove
 
-# define BUFFER_SIZE 1
+# define BUFFER_SIZE 1001
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
