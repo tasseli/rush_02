@@ -6,20 +6,51 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 11:55:29 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 15:10:50 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
 
+void	compare(char *line1, char *line2, int x)
+{
+	char line1[x];
+	char line2[x];
+	ft_strncpy(line1, first_line, x);
+	ft_strncpy(line2, ft_top00, x);
+	if (!ft_strcmp(line1, line2))
+		ft_putstr("it could be top00");
+}
+
+
 void	read(int fd)
 {
 	int		fd;
+	int		reading;
+	void	*buf;
+	char	first_line[10 * BUFFER_SIZE];
+	int		letters;
+	int		x;
 
+	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	fd = open(0, O_RDONLY);
-//ssize_t read(fd, void *buf, size_t count);
-
-//int close(int fd);
+	if (fd == -1)
+		return (1);
+	reading = 1;
+	letters = 0;
+	while (reading)
+	{
+		if (reading != '\n')
+		{
+			reading = read(fd, buf, 1);
+			first_line[x] = buf[x];
+			++letters;
+			++x;
+		}
+		if (!ft_compare(ft_strncpy(NULL, first_line, x), ft_strncpy(NULL,
+						ft_top00, x)))
+			ft_putstr("it could be top00");
+	}
 
 // file open
 // read a char
@@ -53,4 +84,5 @@ void	read(int fd)
 // 		if (no matches left)
 // 			end
 
-//			quit
+	close(fd);
+}

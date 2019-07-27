@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_read.h                                          :+:      :+:    :+:   */
+/*   ft_top.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 14:55:44 by mnenonen         ###   ########.fr       */
+/*   Created: 2019/07/27 14:01:22 by mnenonen          #+#    #+#             */
+/*   Updated: 2019/07/27 14:17:43 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_READ_H
-# define FT_READ_H
+#ifndef FT_TOP_H
+# define FT_TOP_H
 
-# include <unistd.h> // read, close
+#include <stdio.h>
+#include <stdlib.h>
 
-# include <sys/types.h> // open
-# include <sys/stat.h>
-# include <fcntl.h>
-
-# define BUFFER_SIZE 1
-
-void	ft_putstr(char *str);
-char	*ft_strncpy(char *str, const char *str, int n);
-void	read(int fd);
+typedef struct		s_rush_info
+{
+	char	name[20];
+	char	*print;
+}					t_rush_info;
 
 #endif
