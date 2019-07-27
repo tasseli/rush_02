@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush0203.c                                         :+:      :+:    :+:   */
+/*   ft_top.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 13:31:27 by nzinovye         ###   ########.fr       */
+/*   Updated: 2019/07/27 15:01:04 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
+#include "ft_top.h"
+
 /* length is the  amount of chars its actually gonna print, add 1 for null*/
 
-char *ft_top00(int len)
+char	*ft_top00(int len)
 {
 	char *mine;
 	int i;
@@ -37,7 +37,7 @@ char *ft_top00(int len)
 	return (mine);
 }
 
-char *ft_top01(int len)
+char	*ft_top01(int len)
 {
 	char *mine;
 	int i;
@@ -60,7 +60,7 @@ char *ft_top01(int len)
 	return (mine);
 }
 
-char *ft_top02(int len)
+char	*ft_top02(int len)
 {
 	char *mine;
 	int i;
@@ -83,7 +83,30 @@ char *ft_top02(int len)
 	return (mine);
 }
 
-char *ft_top03(int len)
+char	*ft_top03(int len)
+{
+	char *mine;
+	int i;
+
+	mine = (char *)malloc((len + 1) * sizeof(char));
+	i = 1;
+	if (len == 1)
+		mine[0] = 'A';
+	else if (len > 1)
+	{
+		mine[0] = 'A';
+		while (i <= len - 2)
+		{
+			mine[i] = 'B';
+			i++;
+		}
+		mine[len - 1] = 'C';
+		mine[len] = '\0';
+	}
+	return (mine);
+}
+
+char	*ft_top04(int len)
 {
 	char *mine;
 	int i;
@@ -106,31 +129,8 @@ char *ft_top03(int len)
 	return (mine);
 }
 
-char *ft_top04(int len)
-{
-	char *mine;
-	int i;
 
-	mine = (char *)malloc((len + 1) * sizeof(char));
-	i = 1;
-	if (len == 1)
-		mine[0] = 'A';
-	else if (len > 1)
-	{
-		mine[0] = 'A';
-		while (i <= len - 2)
-		{	
-			mine[i] = 'B';
-			i++;
-		}
-		mine[len - 1] = 'C';
-		mine[len] = '\0';
-	}
-	return (mine);
-}
-
-
-int			main()
+int		main(void)
 {
 	int length = 9;
 	char * first_line0;
@@ -140,22 +140,19 @@ int			main()
 	char * first_line4;
 
 	first_line0 = ft_top00(length);
-printf("%s \n", first_line0);
-free (first_line0);
+	printf("%s \n", first_line0);
+	free (first_line0);
 	first_line1 = ft_top01(length);
-printf("%s \n", first_line1);
-free (first_line1);
+	printf("%s \n", first_line1);
+	free (first_line1);
 	first_line2 = ft_top02(length);
-printf("%s \n", first_line2);
-free (first_line2);
+	printf("%s \n", first_line2);
+	free (first_line2);
 	first_line3 = ft_top03(length);
-printf("%s \n", first_line3);
-free (first_line3);
+	printf("%s \n", first_line3);
+	free (first_line3);
 	first_line4 = ft_top04(length);
-printf("%s \n", first_line4);
-free (first_line4);
-
-return (0);
+	printf("%s \n", first_line4);
+	free (first_line4);
+	return (0);
 }
-
-
