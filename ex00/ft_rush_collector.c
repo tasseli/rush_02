@@ -6,11 +6,11 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 16:19:59 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 16:31:17 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_top.h"
+#include "ft_rush.h"
 
 
 t_rush_info	*ft_rush_collector00(int x, int y)
