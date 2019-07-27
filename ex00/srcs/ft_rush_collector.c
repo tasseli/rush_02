@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 16:41:23 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:22:13 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,4 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 	strcpy(myinfo->name, "rushcollector00");
 	myinfo->print = ans;
 	return (myinfo);
-}
-
-int			main(void)
-{
-	int			length = 9;
-	char		*first_line0;
-	t_rush_info	*myinfo;
-
-	myinfo = ft_rush_collector00(length, 3);
-	printf("%s %s\n", myinfo->name, myinfo->print);
-	free (myinfo->print);
-	free (myinfo);
-	return (0);
 }
