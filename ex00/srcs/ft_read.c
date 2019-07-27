@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 19:28:03 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 21:56:23 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	ft_read(void)
 		if (reading != '\n')
 		{
 			reading = read(0, buf, 1);
+			write(1, buf, 1);
 			first_line[letters] = ((char *)buf)[letters];
 			++letters;
 		}
@@ -76,6 +77,5 @@ int	ft_read(void)
 // 		if (no matches left)
 // 			end
 
-	close(fd);
 	return (0);
 }
