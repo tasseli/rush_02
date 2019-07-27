@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 15:01:04 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 15:59:08 by sreijola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,32 +127,4 @@ char	*ft_top04(int len)
 		mine[len] = '\0';
 	}
 	return (mine);
-}
-
-
-int		main(void)
-{
-	int length = 9;
-	char * first_line0;
-	char * first_line1;
-	char * first_line2;
-	char * first_line3;
-	char * first_line4;
-
-	first_line0 = ft_top00(length);
-	printf("%s \n", first_line0);
-	free (first_line0);
-	first_line1 = ft_top01(length);
-	printf("%s \n", first_line1);
-	free (first_line1);
-	first_line2 = ft_top02(length);
-	printf("%s \n", first_line2);
-	free (first_line2);
-	first_line3 = ft_top03(length);
-	printf("%s \n", first_line3);
-	free (first_line3);
-	first_line4 = ft_top04(length);
-	printf("%s \n", first_line4);
-	free (first_line4);
-	return (0);
 }
