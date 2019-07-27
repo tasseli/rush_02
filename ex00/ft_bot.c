@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 13:38:45 by sreijola         ###   ########.fr       */
+/*   Updated: 2019/07/27 13:53:27 by sreijola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,22 +129,22 @@ char *ft_bot04(int len)
 int			main()
 {
 	char * first_line;
-	int y;
+	int t;
 
-	y = 1;
-	first_line = ft_bot00(y);
+	t = 1;
+	first_line = ft_bot00(t);
 printf("%s \n", first_line);
 free (first_line);
-	first_line = ft_bot01(y);
+	first_line = ft_bot01(t);
 printf("%s \n", first_line);
 free (first_line);
-	first_line = ft_bot02(y);
+	first_line = ft_bot02(t);
 printf("%s \n", first_line);
 free (first_line);
-	first_line = ft_bot03(y);
+	first_line = ft_bot03(t);
 printf("%s \n", first_line);
 free (first_line);
-	first_line = ft_bot04(y);
+	first_line = ft_bot04(t);
 printf("%s \n", first_line);
-free (first_line);return (y);
+free (first_line);return (t);
 }
