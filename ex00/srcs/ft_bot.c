@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 18:21:42 by sreijola         ###   ########.fr       */
+/*   Updated: 2019/07/27 18:23:14 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*ft_bot03(int len)
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
 	if (len == 1)
-		mine[0] = 'A'
+		mine[0] = 'A';
 	if (len > 1)
 	{
 		mine[0] = 'A';
