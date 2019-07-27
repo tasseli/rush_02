@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 18:05:32 by sreijola         ###   ########.fr       */
+/*   Updated: 2019/07/27 18:18:17 by sreijola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ char	*ft_bot01(int len)
 	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
-	if (len > 0)
+	if (len == 1)
+		mine[0] = '\\';
+	else if (len > 1)
 	{
 		mine[0] = '\\';
 		while (i <= len - 2)
@@ -47,7 +49,7 @@ char	*ft_bot01(int len)
 			mine[i] = '*';
 			i++;
 		}
-		mine[len - 1] = '/';
+			mine[len - 1] = '/';
 		mine[len] = '\0';
 	}
 	return (mine);
@@ -102,7 +104,9 @@ char	*ft_bot04(int len)
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
-	if (len > 0)
+	if (len == 1)
+		mine[0] = 'C';
+	if (len > 1)
 	{
 		mine[0] = 'C';
 		while (i <= len - 2)
