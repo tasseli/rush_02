@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 17:53:57 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 18:29:02 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@
 
 # define BUFFER_SIZE 1
 
+void	ft_putchar(char c);
 void	ft_putstr(char *str);
 //char	*ft_strncpy(char *str, const char *str, int n); Under repairs.
 int	ft_read(void);
