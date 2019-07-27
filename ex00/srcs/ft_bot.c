@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 16:12:34 by sreijola         ###   ########.fr       */
+/*   Updated: 2019/07/27 18:05:32 by sreijola         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,7 @@ char	*ft_bot01(int len)
 	int		i;
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
-	i = 1;
-	if (len == 1)
-		mine[0] = '/';
-	else if (len > 1)
+	if (len > 0)
 	{
 		mine[0] = '\\';
 		while (i <= len - 2)
@@ -63,9 +60,7 @@ char	*ft_bot02(int len)
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
-	if (len == 1)
-		mine[0] = 'A';
-	else if (len > 1)
+	if (len > 0)
 	{
 		mine[0] = 'C';
 		while (i <= len - 2)
@@ -86,9 +81,7 @@ char	*ft_bot03(int len)
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
-	if (len == 1)
-		mine[0] = 'A';
-	else if (len > 1)
+	if (len > 0)
 	{
 		mine[0] = 'A';
 		while (i <= len - 2)
@@ -109,9 +102,7 @@ char	*ft_bot04(int len)
 
 	mine = (char *)malloc((len + 1) * sizeof(char));
 	i = 1;
-	if (len == 1)
-		mine[0] = 'A';
-	else if (len > 1)
+	if (len > 0)
 	{
 		mine[0] = 'C';
 		while (i <= len - 2)
