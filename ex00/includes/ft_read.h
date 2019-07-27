@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 17:10:55 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:38:31 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 
 void	ft_putstr(char *str);
 //char	*ft_strncpy(char *str, const char *str, int n); Under repairs.
-void	ft_read(void);
+int	ft_read(void);
 t_rush_info	*ft_rush_collector00(int x, int y);
 
 #endif

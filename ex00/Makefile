@@ -6,7 +6,7 @@
 #    By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 17:02:52 by mnenonen          #+#    #+#              #
-#    Updated: 2019/07/27 17:23:12 by mnenonen         ###   ########.fr        #
+#    Updated: 2019/07/27 17:33:12 by mnenonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,5 +21,10 @@ all:
 
 fclean:
 	/bin/rm -f $(NAME)
+
+lldb: fclean
+	gcc -Iincludes -g $(SOURCES) -o debug_$(NAME)
+	lldb debug_$(NAME)
+	run
 
 re: fclean all

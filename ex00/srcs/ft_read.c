@@ -6,14 +6,14 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 17:10:37 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 17:37:44 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_rush.h"
 #include "ft_read.h"
 
-void	ft_read(void)
+int	ft_read(void)
 {
 	int			fd;
 	int			reading;
@@ -26,7 +26,7 @@ void	ft_read(void)
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	fd = open(0, O_RDONLY);
 	if (fd == -1)
-		return ;
+		return (1);
 	reading = 1;
 	letters = 0;
 	while (reading)
@@ -77,4 +77,5 @@ void	ft_read(void)
 // 			end
 
 	close(fd);
+	return (0);
 }
