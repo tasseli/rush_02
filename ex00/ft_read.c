@@ -6,17 +6,11 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 13:37:07 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 13:51:26 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
-
-void	drop_alts(char ***alts_cont char *line,
-		(*comparer)(char **alts, char*line))
-{
-
-}
 
 void	read(int fd)
 {
@@ -26,12 +20,7 @@ void	read(int fd)
 	char	first_line[10 * BUFFER_SIZE];
 	int		letters;
 	int		x;
-	char	***alt_container;
-	char	**alternatives;
 
-	alternatives = {{"rush00"}, {"rush01"}, {"rush02"}, {"rush03"},
-		{"rush04"}, {""}};
-	alt_container = &alternatives;
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	fd = open(0, O_RDONLY);
 	if (fd == -1)
@@ -47,7 +36,12 @@ void	read(int fd)
 			++letters;
 			++x;
 		}
-		drop_alts(alt_container, first_line, &comparer);
+		char line1[x];
+		char line2[x];
+		ft_strncpy(line1, first_line, x);
+		ft_strncpy(line2, ft_top00, x);
+		if (!ft_strcmp(line1, line2))
+			ft_putstr("it could be top00");
 
 // file open
 // read a char
