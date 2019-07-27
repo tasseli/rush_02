@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 11:47:05 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 13:37:09 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 # include <sys/types.h> // open
 # include <sys/stat.h>
 # include <fcntl.h>
+
+# define BUFFER_SIZE 1
 
 #endif

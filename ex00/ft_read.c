@@ -6,20 +6,48 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 11:55:29 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/27 13:37:07 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
 
+void	drop_alts(char ***alts_cont char *line,
+		(*comparer)(char **alts, char*line))
+{
+
+}
+
 void	read(int fd)
 {
 	int		fd;
+	int		reading;
+	void	*buf;
+	char	first_line[10 * BUFFER_SIZE];
+	int		letters;
+	int		x;
+	char	***alt_container;
+	char	**alternatives;
 
+	alternatives = {{"rush00"}, {"rush01"}, {"rush02"}, {"rush03"},
+		{"rush04"}, {""}};
+	alt_container = &alternatives;
+	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	fd = open(0, O_RDONLY);
-//ssize_t read(fd, void *buf, size_t count);
-
-//int close(int fd);
+	if (fd == -1)
+		return (1);
+	reading = 1;
+	letters = 0;
+	while (reading)
+	{
+		if (reading != '\n')
+		{
+			reading = read(fd, buf, 1);
+			first_line[x] = buf[x];
+			++letters;
+			++x;
+		}
+		drop_alts(alt_container, first_line, &comparer);
 
 // file open
 // read a char
@@ -52,5 +80,7 @@ void	read(int fd)
 // 		narrow down
 // 		if (no matches left)
 // 			end
+
+	close(fd);
 
 //			quit
