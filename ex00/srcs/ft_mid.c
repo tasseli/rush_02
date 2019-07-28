@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/28 16:24:30 by nzinovye         ###   ########.fr       */
+/*   Updated: 2019/07/28 17:43:55 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ char	*ft_mid00(int len)
 			i++;
 		}
 		mine[len - 1] = '|';
-		mine[len] = '\n';
-		mine[len + 1] = '\0';
 	}
+	mine[len] = '\n';
+	mine[len + 1] = '\0';
 	return (mine);
 }
 
@@ -54,9 +54,9 @@ char	*ft_mid01(int len)
 			i++;
 		}
 		mine[len - 1] = '*';
-		mine[len] = '\n';
-		mine[len + 1] = '\0';
 	}
+	mine[len] = '\n';
+	mine[len + 1] = '\0';
 	return (mine);
 }
 
@@ -78,9 +78,9 @@ char	*ft_mid02(int len)
 			i++;
 		}
 		mine[len - 1] = 'B';
-		mine[len] = '\n';
-		mine[len + 1] = '\0';
 	}
+	mine[len] = '\n';
+	mine[len + 1] = '\0';
 	return (mine);
 }
 
@@ -102,9 +102,9 @@ char	*ft_mid03(int len)
 			i++;
 		}
 		mine[len - 1] = 'B';
-		mine[len] = '\n';
-		mine[len + 1] = '\0';
 	}
+	mine[len] = '\n';
+	mine[len + 1] = '\0';
 	return (mine);
 }
 
@@ -126,8 +126,8 @@ char	*ft_mid04(int len)
 			i++;
 		}
 		mine[len - 1] = 'B';
-		mine[len] = '\n';
-		mine[len + 1] = '\0';
 	}
+	mine[len] = '\n';
+	mine[len + 1] = '\0';
 	return (mine);
 }
