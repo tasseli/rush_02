@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 22:23:59 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:40:30 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void			ft_putstr(char *str);
 char			*ft_strncpy(char *str1, const char *str2, int n);
 void			*ft_read(t_coords *c);
 int				find_matches(void *buf, t_coords *c);
-void			print_tag(t_coords *xy, t_rush_info *rush);
+void			print_tag(t_coords *xy, t_rush_info *rush, int nb);
 t_rush_info		*ft_rush_collector00(int x, int y);
 t_rush_info		*ft_rush_collector01(int x, int y);
 t_rush_info		*ft_rush_collector02(int x, int y);

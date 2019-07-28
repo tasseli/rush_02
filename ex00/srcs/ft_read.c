@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 22:26:30 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:40:49 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,14 +108,13 @@ int		find_matches(void *buf, t_coords *coords_found)
 	while (i < 5)
 	{
 		if (!strcmp(buf, knowns[i]->print))
-		{
-			print_tag(coords_found, knowns[i]);
 			found++;
-		}
 		else
 		if (debugging) ft_putstr("aucune\n");
 		if (debugging) printf("%s\n", knowns[i]->print);
 		++i;
 	}
+	print_tag(coords_found, knowns[i], found);
+
 	return (found);
 }
