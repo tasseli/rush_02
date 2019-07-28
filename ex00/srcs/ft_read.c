@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 23:46:01 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 23:49:57 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	*ft_read(t_coords *findings)
 		findings->x = found->x;
 		findings->y = found->y;
 		return (buf);
-
+	}
 	return (NULL);
 }
 
