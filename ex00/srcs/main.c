@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 17:13:33 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 19:58:40 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,15 @@
 
 int	main(int argc, char **argv)
 {
-	int		x;
-	int		y;
-	void	*buf;
+	void		*buf;
+	t_coords	deduce;
+	t_coords	*pass;
 
-	x = atoi(argv[1]);
-	y = atoi(argv[2]);
 //	buf = ft_read()
-	if (!find_matches(ft_read(x, y), x, y))
+	deduce.x = 0;
+	deduce.y = 0;
+	pass = &deduce;
+	if (!find_matches(ft_read(pass), pass))
 		ft_putstr("No matches found :(");
 	return (0);
 }

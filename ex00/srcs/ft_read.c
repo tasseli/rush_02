@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 19:46:19 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 19:58:31 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,26 +56,30 @@ t_coords	*validate(void *buf, int chars)
 	return (found);
 }
 
-void	*ft_read(int x, int y)
+void	*ft_read(t_coords *findings)
 {
 	int			fd;
 	void		*buf;
 	char		first_line[1 + BUFFER_SIZE];
-	t_coords		*found;
+	t_coords	*found;
 	int			chars;
 
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	chars = read(0, buf, BUFFER_SIZE);
 	write(1, buf, BUFFER_SIZE); // TODO remove
 	if (((char *)buf)[0] > 0)
+	{
 		found = validate(buf, chars);
 		if (found->x == 0 || found->y == 0)
 			return NULL;
+		findings->x = found->x;
+		findings->y = found->y;
 		return (buf);
+	}
 	return (NULL);
 }
 
-int		find_matches(void *buf, int x, int y)
+int		find_matches(void *buf, t_coords *coords_found)
 {
 	int debugging = 1;
 	t_rush_info	*knowns[5];
@@ -83,11 +87,11 @@ int		find_matches(void *buf, int x, int y)
 	int i;
 	int found;
 
-	knowns[0] = ft_rush_collector00(x, y);
-	knowns[1] = ft_rush_collector01(x, y);
-	knowns[2] = ft_rush_collector02(x, y);
-	knowns[3] = ft_rush_collector03(x, y);
-	knowns[4] = ft_rush_collector04(x, y);
+	knowns[0] = ft_rush_collector00(coords_found->x, coords_found->y);
+	knowns[1] = ft_rush_collector01(coords_found->x, coords_found->y);
+	knowns[2] = ft_rush_collector02(coords_found->x, coords_found->y);
+	knowns[3] = ft_rush_collector03(coords_found->x, coords_found->y);
+	knowns[4] = ft_rush_collector04(coords_found->x, coords_found->y);
 	i = 0;
 	found = 0;
 	if (debugging) printf("buf:\n%s\n", ((char *)buf));
