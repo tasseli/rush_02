@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 16:40:14 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 17:12:19 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,29 @@ void	*ft_read(int x, int y)
 
 int		find_matches(void *buf, int x, int y)
 {
+	int debugging = 1;
 	t_rush_info	*knowns[5] = {ft_rush_collector00(x, y),
-		ft_rush_collector01(x, y),
-		ft_rush_collector02(x, y), ft_rush_collector03(x, y),
-		ft_rush_collector04(x, y)};
+		ft_rush_collector01(x, y), ft_rush_collector02(x, y),
+		ft_rush_collector03(x, y), ft_rush_collector04(x, y)};
 	t_rush_info	*rush00;
 	int i;
 	int found;
 
-	rush00 = ft_rush_collector00(x, y);
 	i = 0;
 	found = 0;
+	if (debugging) printf("buf:\n%s\n", ((char *)buf));
 	while (i < 5)
 	{
 		if (!strcmp(buf, knowns[i]->print))
 		{
 			printf("They look the same! It could be %s\n", knowns[i]->name);
+			if (debugging) printf("%s\n", knowns[i]->print);
 			found++;
 		}
 		else
 		{
 			printf("They look different. %s\n", knowns[i]->name);
+			if (debugging) printf("%s\n", knowns[i]->print);
 		}
 	++i;
 	}
