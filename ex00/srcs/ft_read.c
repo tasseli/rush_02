@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 12:33:42 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 12:55:33 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,30 @@ int	ft_read(void)
 	void		*buf;
 	char		first_line[1 + BUFFER_SIZE];
 	int			letters;
+	int			x;
+	int			y;
 	t_rush_info	*rush00;
 
+	x = 3;
+	y = 4;
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	reading = 1;
 	letters = 0;
-	while (reading)
+	if (reading)
 	{
 		if (reading != '\n')
 		{
-			reading = read(0, buf, 1);
-			write(1, buf, 1);
-			first_line[letters] = ((char *)buf)[letters];
+			reading = read(0, buf, 100);
+			write(1, buf, 100);
+//			first_line[letters] = ((char *)buf)[letters];
 			++letters;
 		}
-		rush00 = ft_rush_collector00(letters, 1);
-
+		rush00 = ft_rush_collector00(x, y);
+		printf("%s with x: %d y: %d:: %s", rush00->name, x, y, rush00->print);
+		if (!strcmp(buf, rush00->print))
+			printf("They look the same! It could be %s", rush00->name);
+		else
+			printf("They look different.\n%s\nvs\n%s", buf, rush00->print);
 	}
 
 // file open
