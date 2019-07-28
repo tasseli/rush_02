@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 22:10:47 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 23:33:14 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,33 +90,65 @@ t_rush_info	**set_knowledge(t_rush_info **goal, t_coords *coords_found)
 	return (goal);
 }
 
-int		find_matches(void *buf, t_coords *coords_found)
+void	print_coords(t_coords *xy)
+{
+	ft_putchar('[');
+	ft_putnbr(xy->x);
+	ft_putstr("] [");
+	ft_putnbr(xy->y);
+	ft_putchar(']');
+}
+
+void	print_tag(t_coords *xy, t_rush_info **rush, int *nb)
+{
+	int i;
+
+	i = 0;
+	while (i < 4)
+	{
+		if (nb[i])
+		{
+			ft_putstr(rush[i]->name);
+			ft_putchar(' ');
+			print_coords(xy);
+			ft_putstr(" || ");
+		}
+		++i;
+	}
+	ft_putstr(rush[i]->name);
+	ft_putchar(' ');
+	print_coords(xy);
+}
+
+int		*find_matches(void *buf, t_coords *coords_found)
 {
 	int debugging = 0;
 	t_rush_info	**knowns;
 	t_rush_info	*rush00;
 	int i;
-	int found;
+	int *found;
 
+	found = (int *)malloc(5*sizeof(int));
+	i = 0;
+	while (i++ < 5)
+		found[i] = 0;
 	knowns = (t_rush_info **)malloc(5 * sizeof(t_rush_info *));
 	if (coords_found == NULL)
 		return (0);
 	knowns = set_knowledge(knowns, coords_found);
 	i = 0;
-	found = 0;
 	if (debugging) printf("buf:\n%s\n", ((char *)buf));
 	while (i < 5)
 	{
 		if (!strcmp(buf, knowns[i]->print))
 		{
-			ft_putstr(knowns[i]->name);
-			ft_putchar('\n');
-			found++;
+			found[i] += 1;
 		}
 		else
-		if (debugging) ft_putstr("aucune\n");
+			if (debugging) ft_putstr("aucune\n");
 		if (debugging) printf("%s\n", knowns[i]->print);
 		++i;
 	}
+	print_tag(coords_found, knowns, found);
 	return (found);
 }
