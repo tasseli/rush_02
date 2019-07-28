@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 20:49:50 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 21:52:53 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	*ft_read(t_coords *findings)
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	chars = read(0, buf, BUFFER_SIZE);
 	write(1, buf, BUFFER_SIZE); // TODO remove
-	if (((char *)buf)[0] > 0)
+	if (((char *)buf)[0] > 0 && ((char *)buf)[0] != '\n')
 	{
 		found = validate(buf, chars);
 		if (found->x == 0 || found->y == 0)
@@ -79,70 +79,39 @@ void	*ft_read(t_coords *findings)
 	return (NULL);
 }
 
+t_rush_info	**set_knowledge(t_rush_info **goal, t_coords *coords_found)
+{
+	goal[0] = ft_rush_collector00(coords_found->x, coords_found->y);
+	goal[1] = ft_rush_collector01(coords_found->x, coords_found->y);
+	goal[2] = ft_rush_collector02(coords_found->x, coords_found->y);
+	goal[3] = ft_rush_collector03(coords_found->x, coords_found->y);
+	goal[4] = ft_rush_collector04(coords_found->x, coords_found->y);
+	return (goal);
+}
+
 int		find_matches(void *buf, t_coords *coords_found)
 {
 	int debugging = 1;
-	t_rush_info	*knowns[5];
+	t_rush_info	**knowns;
 	t_rush_info	*rush00;
 	int i;
 	int found;
 
-	knowns[0] = ft_rush_collector00(coords_found->x, coords_found->y);
-	knowns[1] = ft_rush_collector01(coords_found->x, coords_found->y);
-	knowns[2] = ft_rush_collector02(coords_found->x, coords_found->y);
-	knowns[3] = ft_rush_collector03(coords_found->x, coords_found->y);
-	knowns[4] = ft_rush_collector04(coords_found->x, coords_found->y);
+	knowns = (t_rush_info **)malloc(5 * sizeof(t_rush_info *));
+	if (coords_found == NULL)
+		return (0);
+	knowns = set_knowledge(knowns, coords_found);
 	i = 0;
 	found = 0;
 	if (debugging) printf("buf:\n%s\n", ((char *)buf));
 	while (i < 5)
 	{
 		if (!strcmp(buf, knowns[i]->print))
-		{
-			printf("%s\n", knowns[i]->name);
-			if (debugging) printf("%s\n", knowns[i]->print);
 			found++;
-		}
 		else
-		{
 			printf("aucune. %s\n", knowns[i]->name);
-			if (debugging) printf("%s\n", knowns[i]->print);
-		}
-	++i;
+		if (debugging) printf("%s\n", knowns[i]->print);
+		++i;
 	}
 	return (found);
 }
-
-
-// file open
-// read a char
-// while char != '\0'
-// 		FIRST LINE
-// 		while char != '\n'
-// 			construct string
-// 			measure x
-// 		compare string to known fn(x)s
-// 		narrow down
-// 		if (no matches left)
-// 			end
-
-//		SECOND LINE
-//		while char != '\n'
-//			construct string
-//			measure x_2
-//		if (x_2 != x_1)
-/// 		compare string to known fn(x)s with y(1) || y(2) || y(3)
-// 		narrow down
-// 		if (no matches left)
-// 			end
-
-//		THIRD LINE
-//		while char != '\n'
-//			construct string
-//			measure x_3
-//		if (x_3 != x_1)
-/// 		compare string to known fn(x)s with y(1) || y(3) || y(4)
-// 		narrow down
-// 		if (no matches left)
-// 			end
-
