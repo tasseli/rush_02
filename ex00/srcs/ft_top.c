@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/28 15:04:18 by nzinovye         ###   ########.fr       */
+/*   Updated: 2019/07/28 15:55:13 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_top00(int len)
 	char	*mine;
 	int		i;
 
-	mine = (char *)malloc((len + 1) * sizeof(char));
+	mine = (char *)malloc((len + 2) * sizeof(char));
 	i = 1;
 	if (len == 1)
 		mine[0] = 'o';
@@ -31,6 +31,7 @@ char	*ft_top00(int len)
 		}
 		mine[len - 1] = 'o';
 		mine[len] = '\n';
+		mine[len + 1] = '\0';
 	}
 	return (mine);
 }
