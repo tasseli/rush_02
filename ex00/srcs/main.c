@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 23:31:30 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 23:39:04 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ int	main(int argc, char **argv)
 	deduce.y = 0;
 	pass = &deduce;
 	found = find_matches(ft_read(pass), pass);
-	i = 1;
 	found[0] = 0;
+	i = 1;
 	while (i++ < 6)
 		found[0] += found[i];
 	if (!found[0])
