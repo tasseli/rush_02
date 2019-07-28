@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 15:11:14 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 16:25:13 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putchar(char c);
 void	ft_putstr(char *str);
 //char	*ft_strncpy(char *str, const char *str, int n); Under repairs.
 void	*ft_read(int x, int y);
-void	compare(void *buf, int x, int y);
+int		find_matches(void *buf, int x, int y);
 t_rush_info	*ft_rush_collector00(int x, int y);
 t_rush_info	*ft_rush_collector01(int x, int y);
 t_rush_info	*ft_rush_collector02(int x, int y);

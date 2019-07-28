@@ -6,13 +6,13 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 15:12:59 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 16:40:14 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
 
-void		*ft_read(int x, int y)
+void	*ft_read(int x, int y)
 {
 	int			fd;
 	void		*buf;
@@ -25,18 +25,36 @@ void		*ft_read(int x, int y)
 		return (buf);
 	return (NULL);
 }
-//	first_line[letters] = ((char *)buf)[letters];
-void	compare(void *buf, int x, int y)
+
+int		find_matches(void *buf, int x, int y)
 {
-t_rush_info	*rush00;
+	t_rush_info	*knowns[5] = {ft_rush_collector00(x, y),
+		ft_rush_collector01(x, y),
+		ft_rush_collector02(x, y), ft_rush_collector03(x, y),
+		ft_rush_collector04(x, y)};
+	t_rush_info	*rush00;
+	int i;
+	int found;
 
 	rush00 = ft_rush_collector00(x, y);
-	printf("%s with x: %d y: %d:: %s", rush00->name, x, y, rush00->print);
-	if (!strcmp(buf, rush00->print))
-		printf("They look the same! It could be %s", rush00->name);
-	else
-		printf("They look different.\n%svs\n%s", buf, rush00->print);
+	i = 0;
+	found = 0;
+	while (i < 5)
+	{
+		if (!strcmp(buf, knowns[i]->print))
+		{
+			printf("They look the same! It could be %s\n", knowns[i]->name);
+			found++;
+		}
+		else
+		{
+			printf("They look different. %s\n", knowns[i]->name);
+		}
+	++i;
+	}
+	return (found);
 }
+
 
 // file open
 // read a char
