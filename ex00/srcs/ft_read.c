@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 12:55:33 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 13:25:06 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_read(void)
 		if (!strcmp(buf, rush00->print))
 			printf("They look the same! It could be %s", rush00->name);
 		else
-			printf("They look different.\n%s\nvs\n%s", buf, rush00->print);
+			printf("They look different.\n%svs\n%s", buf, rush00->print);
 	}
 
 // file open

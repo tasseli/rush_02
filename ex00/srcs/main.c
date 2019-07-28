@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 22:54:36 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 13:22:31 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ int	main(int argc, char **argv)
 	testprint(myinfo4->print, x);
 	free (myinfo4->print);
 	free (myinfo4);*/
-	ft_putchar('0' + ft_read());
+	ft_read();
 	return (0);
 }
