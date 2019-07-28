@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/28 15:02:33 by nzinovye         ###   ########.fr       */
+/*   Updated: 2019/07/28 15:40:18 by nzinovye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,21 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 	t_rush_info	*myinfo;
 
 	myinfo = (t_rush_info *)malloc(sizeof(t_rush_info));
-	ans = (char *)malloc((x * y + 1 + 1) * sizeof(char)); // TODO added +1 for
+	ans = (char *)malloc((x * (y + 1) + 1) * sizeof(char)); // TODO added +1 for
 	// testing with \n. Remove once we add all \ns to all rushes.
 	i = 1;
 	if (y == 1)
-		strncpy(ans, ft_top00(x), x);
+		strncpy(ans, ft_top00(x), x + 1);
 	else if (y > 1)
 	{
-		strncpy(ans, ft_top00(x), x);
+		strncpy(ans, ft_top00(x), x + 1);
 		while (i <= y - 2)
 		{
-			strncpy(&ans[i * x], ft_mid00(x), x);
+			strncpy(&ans[i * x], ft_mid00(x), x + 1);
 			i++;
 		}
-		strncpy(&ans[(y - 1) * x], ft_bot00(x), x);
-		ans[y * x] = '\n'; // testing, as above on L22
+		strncpy(&ans[(y - 1) * x], ft_bot00(x), x + 1);
+//		ans[y * x] = '\n'; // testing, as above on L22
 		ans[y * x + 1] = '\0'; // testing
 	}
 	strcpy(myinfo->name, "rushcollector00");
