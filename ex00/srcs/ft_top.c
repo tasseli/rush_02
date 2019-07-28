@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:25 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/27 16:12:33 by nzinovye         ###   ########.fr       */
+/*   Updated: 2019/07/28 15:04:18 by nzinovye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_top00(int len)
 			i++;
 		}
 		mine[len - 1] = 'o';
-		mine[len] = '\0';
+		mine[len] = '\n';
 	}
 	return (mine);
 }
@@ -53,7 +53,7 @@ char	*ft_top01(int len)
 			i++;
 		}
 		mine[len - 1] = '\\';
-		mine[len] = '\0';
+		mine[len] = '\n';
 	}
 	return (mine);
 }
@@ -76,7 +76,7 @@ char	*ft_top02(int len)
 			i++;
 		}
 		mine[len - 1] = 'A';
-		mine[len] = '\0';
+		mine[len] = '\n';
 	}
 	return (mine);
 }
@@ -99,7 +99,7 @@ char	*ft_top03(int len)
 			i++;
 		}
 		mine[len - 1] = 'C';
-		mine[len] = '\0';
+		mine[len] = '\n';
 	}
 	return (mine);
 }
@@ -122,7 +122,7 @@ char	*ft_top04(int len)
 			i++;
 		}
 		mine[len - 1] = 'C';
-		mine[len] = '\0';
+		mine[len] = '\n';
 	}
 	return (mine);
 }
