@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/28 17:54:49 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 18:09:28 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 	if (y == 1)
 	{
 		strncpy(ans, ft_top00(x), x + 1);
+		ans[x] = '\0';
 	}
 	else if (y > 1)
 	{
@@ -34,7 +35,7 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 			i++;
 		}
 		strncpy(&ans[(y - 1) * (x + 1)], ft_bot00(x), x + 1);
-		ans[(y + 1) * x + 2] = '\0';
+		ans[(y + 1) * x] = '\0';
 	}
 	strcpy(myinfo->name, "rush-00");
 	myinfo->print = ans;
@@ -51,7 +52,10 @@ t_rush_info	*ft_rush_collector01(int x, int y)
 	ans = (char *)malloc((x * (y + 1) + 1) * sizeof(char));
 	i = 1;
 	if (y == 1)
+	{
 		strncpy(ans, ft_top01(x), x + 1);
+		ans[x] = '\0';
+	}
 	else if (y > 1)
 	{
 		strncpy(ans, ft_top01(x), x + 1);
@@ -61,7 +65,7 @@ t_rush_info	*ft_rush_collector01(int x, int y)
 			i++;
 		}
 		strncpy(&ans[(y - 1) * (x + 1)], ft_bot01(x), x + 1);
-		ans[(y + 1) * x + 2] = '\0';
+		ans[(y + 1) * x] = '\0';
 	}
 	strcpy(myinfo->name, "rush-01");
 	myinfo->print = ans;
@@ -78,7 +82,10 @@ t_rush_info	*ft_rush_collector02(int x, int y)
 	ans = (char *)malloc((x * (y + 1) + 1) * sizeof(char));
 	i = 1;
 	if (y == 1)
+	{
 		strncpy(ans, ft_top02(x), x + 1);
+		ans[x] = '\0';
+	}
 	else if (y > 1)
 	{
 		strncpy(ans, ft_top02(x), x + 1);
@@ -88,7 +95,7 @@ t_rush_info	*ft_rush_collector02(int x, int y)
 			i++;
 		}
 		strncpy(&ans[(y - 1) * (x + 1)], ft_bot02(x), x + 1);
-		ans[(y + 1) * x + 2] = '\0';
+		ans[(y + 1) * x] = '\0';
 	}
 	strcpy(myinfo->name, "rush-02");
 	myinfo->print = ans;
@@ -105,7 +112,10 @@ t_rush_info	*ft_rush_collector03(int x, int y)
 	ans = (char *)malloc((x * (y + 1) + 1) * sizeof(char));
 	i = 1;
 	if (y == 1)
+	{
 		strncpy(ans, ft_top03(x), x + 1);
+		ans[x] = '\0';
+	}
 	else if (y > 1)
 	{
 		strncpy(ans, ft_top03(x), x + 1);
@@ -115,7 +125,7 @@ t_rush_info	*ft_rush_collector03(int x, int y)
 			i++;
 		}
 		strncpy(&ans[(y - 1) * (x + 1)], ft_bot03(x), x + 1);
-		ans[(y + 1) * x + 2] = '\0';
+		ans[(y + 1) * x] = '\0';
 	}
 	strcpy(myinfo->name, "rush-03");
 	myinfo->print = ans;
@@ -132,7 +142,10 @@ t_rush_info	*ft_rush_collector04(int x, int y)
 	ans = (char *)malloc((x * (y + 1) + 1) * sizeof(char));
 	i = 1;
 	if (y == 1)
+	{
 		strncpy(ans, ft_top04(x), x + 1);
+		ans[x] = '\0';
+	}
 	else if (y > 1)
 	{
 		strncpy(ans, ft_top04(x), x + 1);
@@ -142,7 +155,7 @@ t_rush_info	*ft_rush_collector04(int x, int y)
 			i++;
 		}
 		strncpy(&ans[(y - 1) * (x + 1)], ft_bot04(x), x + 1);
-		ans[(y + 1) * x + 2] = '\0';
+		ans[(y + 1) * x] = '\0';
 	}
 	strcpy(myinfo->name, "rush-04");
 	myinfo->print = ans;
