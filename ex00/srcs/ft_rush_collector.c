@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/28 18:49:56 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 19:48:07 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 		else
 			ans[(y) * (x + 1)] = '\0';
 	}
-	strcpy(myinfo->name, "rush-00");
+	strcpy(myinfo->name, "[rush-00]" );
 	myinfo->print = ans;
 	return (myinfo);
 }
@@ -81,7 +81,7 @@ t_rush_info	*ft_rush_collector01(int x, int y)
 		else
 			ans[(y) * (x + 1)] = '\0';
 	}
-	strcpy(myinfo->name, "rush-01");
+	strcpy(myinfo->name, "[rush-01]");
 	myinfo->print = ans;
 	return (myinfo);
 }
@@ -118,7 +118,7 @@ t_rush_info	*ft_rush_collector02(int x, int y)
 		else
 			ans[(y) * (x + 1)] = '\0';
 	}
-	strcpy(myinfo->name, "rush-02");
+	strcpy(myinfo->name, "[rush-02]");
 	myinfo->print = ans;
 	return (myinfo);
 }
@@ -155,7 +155,7 @@ t_rush_info	*ft_rush_collector03(int x, int y)
 		else
 			ans[(y) * (x + 1)] = '\0';
 	}
-	strcpy(myinfo->name, "rush-03");
+	strcpy(myinfo->name, "[rush-03]");
 	myinfo->print = ans;
 	return (myinfo);
 }
@@ -192,7 +192,7 @@ t_rush_info	*ft_rush_collector04(int x, int y)
 		else
 			ans[(y) * (x + 1)] = '\0';
 	}
-	strcpy(myinfo->name, "rush-04");
+	strcpy(myinfo->name, "[rush-04]");
 	myinfo->print = ans;
 	return (myinfo);
 }

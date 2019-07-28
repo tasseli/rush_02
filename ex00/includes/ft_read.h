@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 16:25:13 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 19:35:22 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,12 @@
 # include "ft_rush.h"
 
 # define BUFFER_SIZE 1001
+
+typedef struct	s_coords
+{
+	int x;
+	int y;
+}				t_coords;
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
