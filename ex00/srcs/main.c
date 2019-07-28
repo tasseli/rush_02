@@ -6,13 +6,11 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 20:20:13 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 21:54:56 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_read.h"
-
-#include <stdlib.h>
 
 int	main(int argc, char **argv)
 {
@@ -20,7 +18,6 @@ int	main(int argc, char **argv)
 	t_coords	deduce;
 	t_coords	*pass;
 
-//	buf = ft_read()
 	deduce.x = 0;
 	deduce.y = 0;
 	pass = &deduce;
