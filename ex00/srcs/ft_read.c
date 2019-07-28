@@ -6,45 +6,37 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 13:25:06 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 15:12:59 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rush.h"
 #include "ft_read.h"
 
-int	ft_read(void)
+void		*ft_read(int x, int y)
 {
 	int			fd;
-	int			reading;
 	void		*buf;
 	char		first_line[1 + BUFFER_SIZE];
-	int			letters;
-	int			x;
-	int			y;
-	t_rush_info	*rush00;
 
-	x = 3;
-	y = 4;
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
-	reading = 1;
-	letters = 0;
-	if (reading)
-	{
-		if (reading != '\n')
-		{
-			reading = read(0, buf, 100);
-			write(1, buf, 100);
-//			first_line[letters] = ((char *)buf)[letters];
-			++letters;
-		}
-		rush00 = ft_rush_collector00(x, y);
-		printf("%s with x: %d y: %d:: %s", rush00->name, x, y, rush00->print);
-		if (!strcmp(buf, rush00->print))
-			printf("They look the same! It could be %s", rush00->name);
-		else
-			printf("They look different.\n%svs\n%s", buf, rush00->print);
-	}
+	read(0, buf, BUFFER_SIZE);
+	write(1, buf, BUFFER_SIZE);
+	if (((char *)buf)[0] > 0)
+		return (buf);
+	return (NULL);
+}
+//	first_line[letters] = ((char *)buf)[letters];
+void	compare(void *buf, int x, int y)
+{
+t_rush_info	*rush00;
+
+	rush00 = ft_rush_collector00(x, y);
+	printf("%s with x: %d y: %d:: %s", rush00->name, x, y, rush00->print);
+	if (!strcmp(buf, rush00->print))
+		printf("They look the same! It could be %s", rush00->name);
+	else
+		printf("They look different.\n%svs\n%s", buf, rush00->print);
+}
 
 // file open
 // read a char
@@ -78,5 +70,3 @@ int	ft_read(void)
 // 		if (no matches left)
 // 			end
 
-	return (0);
-}
