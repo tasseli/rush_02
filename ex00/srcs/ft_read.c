@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 22:54:34 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 12:33:42 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,7 @@ int	ft_read(void)
 			++letters;
 		}
 		rush00 = ft_rush_collector00(letters, 1);
-		strncpy(, first_line, letters);
-//		if (!strcmp(strncpy(NULL, first_line, letters), strncpy(NULL,
-//					rush00->print, letters)))
-//			ft_putstr("it could be top00");
-//		else
-//			ft_putstr("No match found");
+
 	}
 
 // file open
