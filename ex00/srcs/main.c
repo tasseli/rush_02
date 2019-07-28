@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 21:54:56 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:05:15 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,6 @@ int	main(int argc, char **argv)
 	deduce.y = 0;
 	pass = &deduce;
 	if (!find_matches(ft_read(pass), pass))
-		ft_putstr("No matches found :(");
+		ft_putstr("aucune");
 	return (0);
 }

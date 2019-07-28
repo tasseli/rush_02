@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 21:54:07 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:06:23 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct	s_coords
 
 void			ft_putchar(char c);
 void			ft_putstr(char *str);
-//char	*ft_strncpy(char *str, const char *str, int n); Under repairs.
+char			*ft_strncpy(char *str1, const char *str2, int n);
 void			*ft_read(t_coords *c);
 int				find_matches(void *buf, t_coords *c);
 t_rush_info		*ft_rush_collector00(int x, int y);

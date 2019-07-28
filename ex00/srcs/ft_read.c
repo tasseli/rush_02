@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 21:52:53 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 22:07:49 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,11 @@ void	*ft_read(t_coords *findings)
 	char		first_line[1 + BUFFER_SIZE];
 	t_coords	*found;
 	int			chars;
+	int		debugging = 1;
 
 	buf = (void *)malloc((1 + BUFFER_SIZE) * sizeof(char));
 	chars = read(0, buf, BUFFER_SIZE);
-	write(1, buf, BUFFER_SIZE); // TODO remove
+	if (debugging) write(1, buf, BUFFER_SIZE); // TODO remove
 	if (((char *)buf)[0] > 0 && ((char *)buf)[0] != '\n')
 	{
 		found = validate(buf, chars);
@@ -91,7 +92,7 @@ t_rush_info	**set_knowledge(t_rush_info **goal, t_coords *coords_found)
 
 int		find_matches(void *buf, t_coords *coords_found)
 {
-	int debugging = 1;
+	int debugging = 0;
 	t_rush_info	**knowns;
 	t_rush_info	*rush00;
 	int i;
@@ -107,9 +108,13 @@ int		find_matches(void *buf, t_coords *coords_found)
 	while (i < 5)
 	{
 		if (!strcmp(buf, knowns[i]->print))
+		{
+			ft_putstr(knowns[i]->name);
+			ft_putchar('\n');
 			found++;
+		}
 		else
-			printf("aucune. %s\n", knowns[i]->name);
+		if (debugging) ft_putstr("aucune");
 		if (debugging) printf("%s\n", knowns[i]->print);
 		++i;
 	}
