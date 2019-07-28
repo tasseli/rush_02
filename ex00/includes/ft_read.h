@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:10:03 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/27 22:54:31 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 15:11:14 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,15 @@
 # include <fcntl.h>
 
 # include <string.h> // TODO remove
+# include "ft_rush.h"
 
 # define BUFFER_SIZE 1001
 
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 //char	*ft_strncpy(char *str, const char *str, int n); Under repairs.
-int	ft_read(void);
+void	*ft_read(int x, int y);
+void	compare(void *buf, int x, int y);
 t_rush_info	*ft_rush_collector00(int x, int y);
 t_rush_info	*ft_rush_collector01(int x, int y);
 t_rush_info	*ft_rush_collector02(int x, int y);
