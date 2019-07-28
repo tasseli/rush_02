@@ -6,7 +6,7 @@
 #    By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 17:02:52 by mnenonen          #+#    #+#              #
-#    Updated: 2019/07/28 13:34:31 by sreijola         ###   ########.fr        #
+#    Updated: 2019/07/28 14:10:23 by nzinovye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all:
 	gcc -Iincludes $(SOURCES) -o $(NAME)
 
 all00:
-	gcc -Iincludes $(SOURCES2) $ -o $(NAME2)
+	gcc -Iincludes $(SOURCES2) -o $(NAME2)
 
 fclean:
 	/bin/rm -f $(NAME)
