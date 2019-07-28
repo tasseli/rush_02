@@ -6,11 +6,10 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 17:21:29 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 19:58:40 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 20:20:13 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_rush.h"
 #include "ft_read.h"
 
 #include <stdlib.h>

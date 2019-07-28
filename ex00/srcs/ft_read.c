@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 11:08:43 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 19:58:31 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 20:49:50 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_coords	*validate(void *buf, int chars)
 	found->x = findx(c_buf, chars);
 	j = 0;
 	i = 0;
-	while (j*i + i < chars)
+	while ((i + 1) * j < chars)
 	{
 		i = 0;
 		while (i < chars && c_buf[i] != '\n' && c_buf[i] != '\0')

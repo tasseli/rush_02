@@ -6,7 +6,7 @@
 /*   By: sreijola <sreijola@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/27 14:05:03 by sreijola          #+#    #+#             */
-/*   Updated: 2019/07/28 19:48:07 by mnenonen         ###   ########.fr       */
+/*   Updated: 2019/07/28 20:38:36 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,15 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 	t_rush_info	*myinfo;
 
 	myinfo = (t_rush_info *)malloc(sizeof(t_rush_info));
-	ans = (char *)malloc((x * (y + 1) + 1) * sizeof(char));
+	ans = (char *)malloc(((x + 1) * y + 1) * sizeof(char));
 	i = 1;
+	strncpy(ans, ft_top00(x), x + 1);
+	while (y > 1 && i++ <= y - 2)
+		strncpy(&ans[(i-1) * (x + 1)], ft_mid00(x), x + 1);
 	if (y == 1)
-	{
-		strncpy(ans, ft_top00(x), x + 1);
 		ans[x] = '\n';
-		ans[x + 1] = '\0';
-	}
-	else if (y > 1)
+	else
 	{
-		strncpy(ans, ft_top00(x), x + 1);
-		while (i <= y - 2)
-		{
-			strncpy(&ans[i * (x + 1)], ft_mid00(x), x + 1);
-			i++;
-		}
 		strncpy(&ans[(y - 1) * (x + 1)], ft_bot00(x), x + 1);
 		if (x == 1)
 		{
@@ -44,7 +37,7 @@ t_rush_info	*ft_rush_collector00(int x, int y)
 		else
 			ans[(y) * (x + 1)] = '\0';
 	}
-	strcpy(myinfo->name, "[rush-00]" );
+	strcpy(myinfo->name, "[rush-00]");
 	myinfo->print = ans;
 	return (myinfo);
 }
