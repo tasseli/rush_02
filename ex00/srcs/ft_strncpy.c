@@ -3,37 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: nzinovye <nzinovye@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/07/16 18:25:45 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/16 19:19:53 by mnenonen         ###   ########.fr       */
+/*   Created: 2019/07/15 18:48:43 by nzinovye          #+#    #+#             */
+/*   Updated: 2019/07/28 22:00:26 by nzinovye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	unsigned int	src_length;
-	unsigned int	i;
+	unsigned int i;
 
-	src_length = 0;
-	while (src[src_length] != 0)
-		++src_length;
-	if (src_length < n)
-	{
-		i = 0;
-		while (src_length + i < n)
-		{
-			dest[src_length + i] = 0;
-			++i;
-		}
-	}
 	i = 0;
-	while (i < src_length && i < n)
+	while (src[i] != '\0' && i < n)
 	{
 		dest[i] = src[i];
-		++i;
+		i++;
 	}
-	return (&dest[i]);
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
 }
