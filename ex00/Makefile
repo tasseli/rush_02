@@ -6,7 +6,7 @@
 #    By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/07/27 17:02:52 by mnenonen          #+#    #+#              #
-#    Updated: 2019/07/28 14:10:23 by nzinovye         ###   ########.fr        #
+#    Updated: 2019/07/28 14:21:25 by mnenonen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,9 @@ SOURCES=srcs/ft_bot.c srcs/ft_rush_collector.c srcs/ft_top.c srcs/ft_mid.c\
 		srcs/ft_strcpy.c srcs/ft_read.c srcs/ft_strncpy.c srcs/ft_putstr.c\
 		srcs/main.c
 
-SOURCES2=srcs/rush00_main.c srcs/ft_make_one.c srcs/ft_bot.c srcs/ft_top.c srcs/ft_mid.c\
-		 srcs/ft_strcpy.c srcs/ft_strncpy.c srcs/ft_putstr.c
+SOURCES2=srcs/rush00_main.c srcs/ft_make_one.c srcs/ft_bot.c srcs/ft_top.c\
+		 srcs/ft_mid.c srcs/ft_strcpy.c srcs/ft_strncpy.c srcs/ft_putstr.c\
+		 srcs/ft_read.c srcs/ft_rush_collector.c
 
 all:
 	gcc -Iincludes $(SOURCES) -o $(NAME)

@@ -6,7 +6,7 @@
 /*   By: mnenonen <mnenonen@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/28 13:11:28 by mnenonen          #+#    #+#             */
-/*   Updated: 2019/07/28 14:08:17 by nzinovye         ###   ########.fr       */
+/*   Updated: 2019/07/28 14:15:08 by mnenonen         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 # include <fcntl.h>
 
 # include <string.h> // TODO remove
+# include "ft_rush.h"
+# include "ft_read.h"
 
 # define BUFFER_SIZE 1001
 
